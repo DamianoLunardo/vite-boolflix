@@ -13,7 +13,8 @@ export default {
     },
     data() {
         return {
-            store
+            store,
+            movies: [],
         }
     },
    methods: {
@@ -24,19 +25,22 @@ export default {
                 query: this.store.query
             }
         }).then (res => {
+            this.movies = res.data.results
             console.log(res.data.results)
         })
     }
    },
-    created() {
-        this.fetchMovies(),
-        console.log('Created')
-    }
+    searchMovies() {
+        this.fetchMovies();
+    },
+    watch: {
+      'store.query': 'fetchMovies'
+    },
 }
 </script>
 
 <template>
-    <AppCard />
+    <AppCard v-for="movie in movies" :key="movie.id" :movie="movie"/>
     <AppCardSeries />
 </template>
 
