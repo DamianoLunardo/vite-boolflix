@@ -8,9 +8,9 @@ export default {
     };
   },
   methods: {
-    // Chiamato quando l'utente preme il bottone "Cerca"
+  
     searchMovies() {
-      this.$emit('searchMovies'); // Emette un evento per notificare AppMain di avviare la ricerca
+      this.$emit('searchMovies'); 
     },
   },
 };
