@@ -12,17 +12,21 @@ export default {
     searchMovies() {
       this.$emit('searchMovies'); 
     },
+   // searchSeries() {
+     // this.$emit('searchSeries');
+   // },
   },
+  
 };
 </script>
 
-<template>
+<template> 
   <div class="container">
     <div class="header">
       <div>Qui ci va il logo (Parte destra)</div>
       <div>
         <input v-model="store.query" type="text" placeholder="Cerca..." />
-        <button @click="searchMovies">Cerca</button>
+        <button @click="searchMovies" >Cerca</button>
       </div>
     </div>
   </div>

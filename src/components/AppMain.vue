@@ -15,6 +15,7 @@ export default {
         return {
             store,
             movies: [],
+           // series: [],
         }
     },
    methods: {
@@ -28,7 +29,18 @@ export default {
             this.movies = res.data.results
             console.log(res.data.results)
         })
-    }
+    },
+   // fetchSeries() {
+       // axios.get ('https://api.themoviedb.org/3/search/tv',{
+          //  params: {
+              //  api_key: this.store.API_KEY,
+              // query: this.store.query
+           // }
+       // }) .then (res => {
+          //  this.series = res.data.results
+         //   console.log(res.data.results)
+       // })
+    //},
    },
     searchMovies() {
         this.fetchMovies();
@@ -36,12 +48,18 @@ export default {
     watch: {
       'store.query': 'fetchMovies'
     },
+   // searchSeries() {
+  //      this.fetchSeries();
+  //  },
+   // watch: {
+     // 'store.query': 'fetchSeries'
+   // },
 }
 </script>
 
 <template>
     <AppCard v-for="movie in movies" :key="movie.id" :movie="movie"/>
-    <AppCardSeries />
+  <!-- <AppCardSeries v-for="serie in series" :key="serie.id" :serie="serie"/>-->
 </template>
 
 <style lang="scss">
