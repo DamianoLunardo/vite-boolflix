@@ -7,15 +7,7 @@ export default {
       store,
     };
   },
-  methods: {
   
-    searchMovies() {
-      this.$emit('searchMovies'); 
-    },
-   // searchSeries() {
-     // this.$emit('searchSeries');
-   // },
-  },
   
 };
 </script>
@@ -26,7 +18,7 @@ export default {
       <div>Qui ci va il logo (Parte destra)</div>
       <div>
         <input v-model="store.query" type="text" placeholder="Cerca..." />
-        <button @click="searchMovies" >Cerca</button>
+        <button>Cerca</button>
       </div>
     </div>
   </div>
