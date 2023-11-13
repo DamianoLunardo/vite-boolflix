@@ -15,10 +15,10 @@ export default {
 <template> 
   <div class="container">
     <div class="header">
-      <div>Qui ci va il logo (Parte destra)</div>
+      <div class="title">BOOLFLIX</div>
       <div>
         <input v-model="store.query" type="text" placeholder="Cerca..." />
-        <button>Cerca</button>
+        
       </div>
     </div>
   </div>
@@ -28,5 +28,12 @@ export default {
 .header {
   display: flex;
   justify-content: space-between;
+  padding-top: 40px;
+}
+
+.title {
+  color: red;
+  font-size: 30px;
+  font-weight: bold;
 }
 </style>

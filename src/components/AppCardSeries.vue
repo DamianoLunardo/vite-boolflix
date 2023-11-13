@@ -21,8 +21,7 @@ flagClassTv() {
     <div>{{ serie.original_name }}</div>
     <div>{{ serie.origin_country }}</div>
     <div :class="flagClassTv"></div>
-    <div>{{ serie.popularity }}</div>
-  </div>
+    </div>
 </template>
 
 <style lang="scss">
