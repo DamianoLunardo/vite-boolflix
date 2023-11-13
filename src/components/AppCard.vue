@@ -18,12 +18,12 @@ export default {
 </script>
 
 <template>
-  <div class="card__film" @mouseover="showInfo = true" @mouseleave="showInfo = false">
+  <div v-if="movie.poster_path" class="card__film" @mouseover="showInfo = true" @mouseleave="showInfo = false">
     <div v-if="movie.poster_path">
       <img :src="`https://image.tmdb.org/t/p/w342/${movie.poster_path}`" />
     </div>
     <div v-if="showInfo" class="film-info">
-      <div>{{ movie.title }}</div>
+      <div>{{ movie.title === movie.original_title ? movie.original_name : movie.title }}</div>
       <div>{{ movie.original_title }}</div>
       <div class="overview-text">{{ movie.overview }}</div>
       <div>{{ movie.release_date }}</div>

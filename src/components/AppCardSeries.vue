@@ -18,11 +18,7 @@ export default {
 </script>
 
 <template>
-  <div
-    class="card__serie"
-    @mouseover="showInfo = true"
-    @mouseleave="showInfo = false"
-  >
+  <div v-if="serie.poster_path" class="card__serie" @mouseover="showInfo = true" @mouseleave="showInfo = false">
     <div v-if="serie.poster_path">
       <img :src="`https://image.tmdb.org/t/p/w342/${serie.poster_path}`" />
     </div>
@@ -32,7 +28,6 @@ export default {
       <div class="overview-text">{{ serie.overview }}</div>
       <div :class="flagClassTv"></div>
       <div>{{ serie.first_air_date }}</div>
-      
       <div class="star-ratings">
         <template v-for="i in Math.floor(serie.vote_average / 2)">
           <i class="fas fa-star"></i>
