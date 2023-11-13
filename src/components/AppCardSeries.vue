@@ -15,8 +15,8 @@ flagClassTv() {
 
 <template>
   <div class="card__serie">
-    <div>
-      <img :src="`https://image.tmdb.org/t/p/w342/${serie.backdrop_path}`" />
+    <div v-if="serie.poster_path">
+      <img :src="`https://image.tmdb.org/t/p/w342/${serie.poster_path}`" />
     </div>
     <div>{{ serie.original_name }}</div>
     <div>{{ serie.origin_country }}</div>

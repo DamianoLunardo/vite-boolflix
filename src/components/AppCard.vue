@@ -14,7 +14,7 @@ export default {
 
 <template>
   <div class="card__film">
-    <div>
+    <div v-if="movie.poster_path">
       <img :src="`https://image.tmdb.org/t/p/w342/${movie.poster_path}`" />
     </div>
     <div>{{ movie.title }}</div>
