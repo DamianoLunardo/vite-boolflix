@@ -57,8 +57,17 @@ export default {
 </script>
 
 <template>
+    <div class="card-grid">
     <AppCard v-for="movie in movies" :key="movie.id" :movie="movie" />
     <AppCardSeries v-for="serie in series" :key="serie.id" :serie="serie" />
+    </div>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+.card-grid {
+    padding-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+</style>
